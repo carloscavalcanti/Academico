@@ -12,12 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :registrable %><br />
-    <%= f.text_field :registrable %>
+    <%= f.label :aluno %><br />
+	<%= collection_select(:registration, :registrable_id, Student.all, :id, :name) %>
+    <%= hidden_field_tag "registration[registrable_type]", "Student" %>
   </div>
   <div class="field">
-    <%= f.label :course %><br />
-    <%= f.text_field :course %>
+    <%= f.label :curso %><br />
+	<%= collection_select(:registration, :course_id, Course.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>
