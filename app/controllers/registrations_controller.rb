@@ -40,7 +40,6 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   # POST /registrations.json
   def create
-    debugger
     @registration = Registration.new(params[:registration])
 
     respond_to do |format|
